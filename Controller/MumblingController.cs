@@ -9,12 +9,11 @@ namespace ExplosionAPI.Controller
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ExplosionController : ControllerBase
+    public class MumblingController : ControllerBase
     {
-        [HttpGet]
-        public string Explode(string sample)
+        public string WordMumbler(string s)
         {
-            return string.Join("", sample.Select(exploded => new string(exploded, int.Parse(exploded.ToString()))));
+            return string.Join("-", s.Select((x, i) => char.ToUpper(x) + new string(char.ToLower(x), i)));
         }
     }
 }
