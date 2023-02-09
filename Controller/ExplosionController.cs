@@ -9,14 +9,13 @@ namespace ExplosionAPI.Controller
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ReverseStringController : ControllerBase
+    public class ExplosionController : ControllerBase
     {
         [HttpGet]
-        //localhost:5000/api/ReverseWord?word=Fernando
-        public string ReverseWord(string word)
+        public static string Explode(string sample)
         {
-            //Return the string in a reversed manner.
-            return new string(word.ToArray().Reverse().ToArray());
+            return string.Join("", sample.Select(exploded => new string(exploded, int.Parse(exploded.ToString()))));
         }
+
     }
 }
