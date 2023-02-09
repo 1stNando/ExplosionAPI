@@ -11,5 +11,10 @@ namespace ExplosionAPI.Controller
     [ApiController]
     public class ReverseStringController : ControllerBase
     {
+        [HttpGet]
+        public string ReverseWord(string word)
+        {
+            return new string(word.ToArray().Reverse().ToArray());
+        }
     }
 }
