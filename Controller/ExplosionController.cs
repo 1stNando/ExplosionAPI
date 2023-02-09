@@ -12,9 +12,10 @@ namespace ExplosionAPI.Controller
     public class ExplosionController : ControllerBase
     {
         [HttpGet]
-        public static string Explode(string sample)
+        public string Explode(string sample)
         {
             return string.Join("", sample.Select(exploded => new string(exploded, int.Parse(exploded.ToString()))));
+
         }
 
     }

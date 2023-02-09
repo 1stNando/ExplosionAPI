@@ -12,7 +12,7 @@ namespace ExplosionAPI.Controller
     public class ReverseStringController : ControllerBase
     {
         [HttpGet]
-        //localhost:5000/api/ReverseWord?word=Fernando
+        //localhost:5000/api/ReverseString?word=Fernando
         public string ReverseWord(string word)
         {
             //Return the string in a reversed manner.
